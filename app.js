@@ -109,7 +109,7 @@ function sumArray(sumArr) { //eslint-disable-line
   var stringFromArray = '';
   for (var j = 0; j < sumArr.length; j++) {
     stringFromArray += sumArr[j];
-    if (sumArr.length !== j + 1) {
+    if (sumArr.length !== sum(j, 1)[0]) {
       stringFromArray += ',';
     }
   }
@@ -138,11 +138,24 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var totalProduct = 1;
+  var stringFromArray = '';
+  for (var i = 0; i < multArr.length; i++) {
+    totalProduct *= multArr[i];
+    stringFromArray += multArr[i];
+    if (multArr.length !== sum(i, 1)[0]) {
+      stringFromArray += ',';
+    }
+  }
 
+  var message = 'The numbers ' + stringFromArray + ' have a product of ' + totalProduct + '.';
+
+  // console.log([totalProduct, message]);
+  return [totalProduct, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
