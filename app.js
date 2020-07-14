@@ -103,7 +103,7 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
   var sumNumInArray = 0;
   for (var i = 0; i < sumArr.length; i++) {
-    sumNumInArray += sumArr[i];
+    sumNumInArray = sum(sumNumInArray, sumArr[i])[0];
   }
   
   var stringFromArray = '';
@@ -141,7 +141,7 @@ function multiplyArray(multArr) { //eslint-disable-line
   var totalProduct = 1;
   var stringFromArray = '';
   for (var i = 0; i < multArr.length; i++) {
-    totalProduct *= multArr[i];
+    totalProduct = multiply(totalProduct, multArr[i])[0];
     stringFromArray += multArr[i];
     if (multArr.length !== sum(i, 1)[0]) {
       stringFromArray += ',';
@@ -182,7 +182,7 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
   var totalProduct = 1;
   var stringFromArray = '';
   for (var i = 0; i < dynamicArray.length; i++) {
-    totalProduct *= dynamicArray[i];
+    totalProduct = multiply(totalProduct, dynamicArray[i])[0];
     stringFromArray += dynamicArray[i];
     if (dynamicArray.length !== sum(i, 1)[0]) {
       stringFromArray += ',';
